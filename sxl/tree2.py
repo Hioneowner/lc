@@ -250,15 +250,15 @@ class Solution:
         self.traversal(root, targetSum, [], result)
         return result
     def traversal(self,node, count, path, result):
-            if not node:
-                return
-            path.append(node.val)
-            count -= node.val
-            if not node.left and not node.right and count == 0:
-                result.append(list(path))
-            self.traversal(node.left, count, path, result)
-            self.traversal(node.right, count, path, result)
-            path.pop()
+        if not node:
+            return
+        path.append(node.val)
+        count -= node.val
+        if not node.left and not node.right and count == 0:
+            result.append(list(path))
+        self.traversal(node.left, count, path, result)
+        self.traversal(node.right, count, path, result)
+        path.pop()
 
 
 
